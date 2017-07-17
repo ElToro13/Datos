@@ -1,0 +1,2 @@
+# Datos
+Datos is an wearable device that helps in keeping us informed about various important parameters in life. It gives Weather data, Train schedule and meaning of a word with its part of speech and use of that word in a sentence.  In addition to this it can also be used as to display a reminder, a cloud based Message. It is a compact device that can be used as an substitute of a watch. It also comes with an dedicated Android App that control the data that is to be displayed!
