@@ -13,7 +13,6 @@ ESP8266WebServer server(80);
  int i=0;
  String tempSymbol=" *C |";
  String sep=" | UV:";
- 
 void setup() {
    Serial.begin(115200);
   display.init();         
@@ -72,9 +71,88 @@ else{
 }
 void loop() { 
   server.handleClient();
- // getTrainData();
- getWeather();
-  delay(20000);
+check = Display_Selector();
+  switch(check){
+    case 0: 
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_24);
+              display.drawString(30,15,"Datos");
+              display.display();
+              break;
+    case 1:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              display.drawString(0,0,"** Reminder **");
+              display.drawString(0,15,"Wake up Early");
+              display.display();
+              break;
+    case 2:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              display.drawString(0,15,"Live");
+              display.setFont(ArialMT_Plain_16);
+              display.drawString(0,35,"RM 2 - 0 Bar");
+              display.display();
+              break;
+    case 3:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              display.drawString(0,0,"** Reminder **");
+              display.setFont(ArialMT_Plain_16);
+              display.drawString(0,35,"RM 2 - 0 Bar");
+              display.display();
+              break;
+    case 4:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              display.drawString(0,0,"Shatabdi Express");
+              display.drawString(0,15,"Next Station: Vadodara");
+              display.drawString(0,30," Total station crossed: 4/9");
+              display.display();
+              break;
+    case 5:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              display.drawString(0,0,"** Reminder **");
+              display.drawString(0,15,"Shatabdi Express");
+              display.drawString(0,30,"Next Station: Vadodara");
+              display.drawString(0,45," Total station crossed: 4/9");
+              display.display();
+              break;
+    case 6:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              display.drawString(0,0,"Live! - RM 3-0 Bar");
+              display.drawString(0,15,"Shatabdi Express");
+              display.drawString(0,30,"Next Station: Vadodara");
+              display.drawString(0,45," Total station crossed: 4/9");
+              display.display();
+              break;
+    case 7:
+      display.clear();
+      display.setTextAlignment(TEXT_ALIGN_LEFT);
+              display.setFont(ArialMT_Plain_10);
+              
+               display.drawString(0,0,"Live! - RM 3-0 Bar");
+              display.drawString(0,15,"Shatabdi Express");
+              display.drawString(0,30,"Nxt Sta: Vadodara - 4/9");
+              display.drawString(0,45,"Wake up early!");
+              display.display(); 
+              break;  
+
+    default:
+
+    break;
+    
+    
+  }
   
 }
 
