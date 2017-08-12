@@ -31,7 +31,7 @@ void Live_score()
                 display.drawString(40,20,Display);
                 display.setTextAlignment(TEXT_ALIGN_LEFT);
                 display.setFont(ArialMT_Plain_24);
-                display.drawString(55,50,Status);
+                display.drawString(50,40,Status);
                 display.display();  
                    
                 }
