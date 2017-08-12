@@ -21,17 +21,22 @@ void Live_score()
                 String LocalTeamName = root["localteam_name"];
                 String AwayTeamName = root["visitorteam_name"];
                 String Display = LocalTeamScore + " - " + AwayTeamScore;
-                String Names = LocalTeamName + " - " + AwayTeamName;
+                String NameHome = LocalTeamName + " (H)";
+                String NameAway = AwayTeamName + " (A)";
                 String Status = root["status"];
+                
                 display.setTextAlignment(TEXT_ALIGN_LEFT);
                 display.setFont(ArialMT_Plain_10);
-                display.drawString(20,0,Names);
+                display.drawString(0,0,NameHome);
+                display.setTextAlignment(TEXT_ALIGN_LEFT);
+                display.setFont(ArialMT_Plain_10);
+                display.drawString(0,14,NameAway);
                 display.setTextAlignment(TEXT_ALIGN_LEFT);
                 display.setFont(ArialMT_Plain_24);
-                display.drawString(40,20,Display);
+                display.drawString(40,25,Display);
                 display.setTextAlignment(TEXT_ALIGN_LEFT);
-                display.setFont(ArialMT_Plain_24);
-                display.drawString(55,50,Status);
+                display.setFont(ArialMT_Plain_10);
+                display.drawString(55,53,Status);
                 display.display();  
                    
                 }
